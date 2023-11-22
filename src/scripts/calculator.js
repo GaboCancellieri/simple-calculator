@@ -1,39 +1,3 @@
-/**
- * Calcula el resultado de una expresión matemática básica.
- *
- * @param {string} expression - La expresión matemática a calcular.
- * @returns {number} - El resultado de la expresión.
- */
-const calculate = (expression) => {
-  const operators = expression.match(/[+\-*/]/g);
-  const operands = expression.split(/[+\-*/]/g).map(Number);
-
-  if (operators && operands.length === operators.length + 1) {
-    let result = operands[0];
-
-    for (let i = 0; i < operators.length; i++) {
-      switch (operators[i]) {
-        case "+":
-          result += operands[i + 1];
-          break;
-        case "-":
-          result -= operands[i + 1];
-          break;
-        case "*":
-          result *= operands[i + 1];
-          break;
-        case "/":
-          result /= operands[i + 1];
-          break;
-      }
-    }
-
-    return result;
-  }
-
-  return null; // Retorna null si la expresión no es válida.
-};
-
 const keys = document.querySelector(".calculator-keys");
 
 /**
@@ -58,7 +22,9 @@ keys.addEventListener("click", (event) => {
       calculatorScreen.value = "";
     } else if (keyValue === "=") {
       // Si se presiona "=", evalúa la expresión y muestra el resultado.
-      calculatorScreen.value = calculate(screenValue);
+      // Aviso: El uso de 'eval()' generalmente no es recomendado debido a problemas de seguridad y eficiencia.
+      // Sin embargo, se utiliza aquí únicamente con fines didácticos y de ejemplo.
+      calculatorScreen.value = eval(screenValue);
     } else {
       // Agrega el valor del botón a la pantalla de la calculadora.
       calculatorScreen.value += keyValue;

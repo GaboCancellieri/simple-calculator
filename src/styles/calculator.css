@@ -4,7 +4,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #444444;
+  background-color: #010101;
 }
 
 .calculator {
@@ -13,10 +13,11 @@ body {
   justify-content: center;
   align-items: center;
   width: 230px;
-  border: 1px solid black;
-  border-radius: 5px;
+  border-radius: 15px;
   padding: 10px;
-  background: #040404;
+  background: #160036;
+  border: 1px solid rgb(52, 52, 52);
+  box-shadow: 3px 3px 5px rgb(52, 52, 52);
 }
 
 .calculator-screen {
@@ -37,6 +38,6 @@ body {
   font-size: 18px;
   cursor: pointer;
   border: none;
-  box-shadow: 1px 1px 1px darkgray;
+  box-shadow: 1px 1px 1px rgb(147, 147, 147);
   border-radius: 10px;
 }
